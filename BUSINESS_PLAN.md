@@ -49,7 +49,7 @@ We are building a comprehensive wine tourism booking platform that connects wine
 A specialized wine tourism marketplace offering:
 - Real-time winery discovery and availability
 - Instant online booking with prepaid tasting fees
-- Integrated travel planning (car services, hotels)
+- Comprehensive winery profiles with reviews and ratings
 - Modern winery portal for capacity management and analytics
 - Industry's lowest commission rate: 4% (vs. competitors at 10-15%)
 
@@ -58,7 +58,7 @@ A specialized wine tourism marketplace offering:
 - **Total Addressable Market (TAM):** $6B (global wine tourism going online)
 - **Serviceable Addressable Market (SAM):** $600M (US wine tourism)
 - **Serviceable Obtainable Market (SOM):** $150M GMV (3,000 US visitor-friendly wineries)
-- **Target Revenue:** $2.01M by Year 3
+- **Target Revenue:** $1.97M by Year 3
 
 ### Business Model
 
@@ -88,9 +88,9 @@ A specialized wine tourism marketplace offering:
 | **Active Users** | 5,000 | 20,000 | 50,000 |
 | **Annual Bookings** | 10,000 | 50,000 | 150,000 |
 | **GMV** | $500K | $2.5M | $7.5M |
-| **Total Revenue** | $74K | $606K | $2.01M |
-| **Operating Expenses** | $150K | $450K | $900K |
-| **Net Income** | -$76K | $156K | $1.11M |
+| **Total Revenue** | $69K | $588K | $1.97M |
+| **Operating Expenses** | $150K | $437K | $866K |
+| **Net Income** | -$81K | $151K | $1.10M |
 
 **Path to Profitability:** Month 18-24 (Year 2)
 
@@ -162,7 +162,7 @@ To make wine tourism accessible, convenient, and enjoyable for wine enthusiasts 
 **Phase 2 (Months 7-12):** Monetization Optimization
 - Performance-based premium listings ($5/booking)
 - Wine club management platform (SaaS)
-- Car service and hotel referrals
+- Event ticketing and premium winery features
 
 **Phase 3 (Year 2+):** Platform Expansion
 - Event ticketing for winery events
@@ -366,7 +366,7 @@ To make wine tourism accessible, convenient, and enjoyable for wine enthusiasts 
 2. **Wine-Specialized Features:**
    - Region-first navigation (not search-first like restaurants)
    - Wine varietal filtering
-   - Integrated travel planning (car services, hotels)
+   - Comprehensive winery profiles with photos and reviews
    - Wine education content
 3. **Regional Dominance Strategy:** Launch region-by-region, build density before expanding
 4. **Founder Market Fit:** Based in Walla Walla, direct relationships with wineries
@@ -540,25 +540,13 @@ Founder & CEO
 - Receive booking reminders (email/SMS)
 - Track booking history and spending
 
-**5. Integrated Travel Services**
-- **Car Services Directory:** Browse local wine country transportation
-  - Sedan services
-  - Limo services
-  - Sprinter vans
-  - Private drivers
-  - Contact information and booking links
-
-- **Hotel Listings:** Partner accommodations with booking links
-  - Hotels in wine region
-  - Bed & Breakfasts
-  - Vacation rentals
-  - Special rates for platform users (future)
-
-- **Itinerary Builder:** Plan multi-winery day trips
+**5. Itinerary Planning**
+- **Multi-Winery Trip Planner:** Plan your perfect wine day
   - Add multiple bookings to itinerary
-  - See map of route
+  - See map of route with driving times
   - Suggested time between wineries
-  - Export to calendar
+  - Export to calendar (.ics file)
+  - Share itinerary with travel companions
 
 #### Winery Portal Features
 
@@ -730,10 +718,10 @@ Founder & CEO
   - Flag inappropriate content
   - Respond to reviews on behalf of platform
 
-- **Partner Management:**
-  - Car service listings
-  - Hotel partnerships
-  - Track referral revenue
+- **Review Moderation:**
+  - Approve/reject user reviews
+  - Flag inappropriate content
+  - Monitor winery ratings
 
 ### Phase 2: Premium Features (Months 7-12)
 
@@ -1136,17 +1124,11 @@ Founder & CEO
    - Cross-promote in newsletters
    - **Projected CAC:** $5-10 per user
 
-2. **Hotels & Accommodations:**
-   - Partner with hotels in wine regions
-   - Concierge referrals
-   - Co-branded marketing materials in hotel rooms
+2. **Tourism Boards:**
+   - Partner with regional visitor bureaus
+   - Cross-promotion in destination marketing
+   - Event sponsorships and wine festivals
    - **Projected CAC:** $10-15 per user
-
-3. **Car Services:**
-   - Partner with wine country transportation
-   - They promote us to their customers
-   - We promote them to our users (symbiotic)
-   - **Projected CAC:** $10 per user
 
 **Blended CAC Target:** $15-20 per user (Year 1-2)
 
@@ -1289,7 +1271,7 @@ Founder & CEO
 - Booking commissions (4%): Grow from $30K (Year 1) to $300K (Year 3)
 - Premium listings ($5/booking): 30% adoption, $27K (Year 1) to $540K (Year 3)
 - Wine club management: Launch Month 9, $6K (Year 1) to $1.02M (Year 3)
-- Other revenue (events, affiliates, tools): $11K (Year 1) to $150K (Year 3)
+- Other revenue (event ticketing, premium winery tools, wine club referrals): $6K (Year 1) to $105K (Year 3)
 
 **Unit Economics:**
 - Standard booking: -$0.10 margin (nearly break-even)
@@ -1308,8 +1290,8 @@ Founder & CEO
 | Booking Commissions (4%) | $0 | $2K | $10K | $18K | **$30K** |
 | Premium Listings ($5/booking) | $0 | $0 | $10K | $17K | **$27K** |
 | Wine Club Management | $0 | $0 | $0 | $6K | **$6K** |
-| Other Revenue | $0 | $2K | $5K | $4K | **$11K** |
-| **Total Revenue** | **$0** | **$4K** | **$25K** | **$45K** | **$74K** |
+| Other Revenue | $0 | $1K | $3K | $2K | **$6K** |
+| **Total Revenue** | **$0** | **$3K** | **$23K** | **$43K** | **$69K** |
 
 **Expenses:**
 
@@ -1325,8 +1307,8 @@ Founder & CEO
 | Miscellaneous | $1K | $1K | $1K | $0 | **$3K** |
 | **Total Expenses** | **$34K** | **$36K** | **$39K** | **$41K** | **$150K** |
 
-**Net Income:** -$76K (expected loss in Year 1)
-**Burn Rate:** $6K/month average
+**Net Income:** -$81K (expected loss in Year 1)
+**Burn Rate:** $6.75K/month average
 
 **Key Metrics (Year 1 End):**
 - Wineries: 100
@@ -1347,8 +1329,8 @@ Founder & CEO
 | Booking Commissions (4%) | $25K | $30K | $35K | $30K | **$120K** |
 | Premium Listings ($5/booking) | $40K | $45K | $50K | $45K | **$180K** |
 | Wine Club Management | $40K | $60K | $70K | $78K | **$248K** |
-| Other Revenue | $12K | $13K | $15K | $18K | **$58K** |
-| **Total Revenue** | **$117K** | **$148K** | **$170K** | **$171K** | **$606K** |
+| Other Revenue | $8K | $10K | $11K | $11K | **$40K** |
+| **Total Revenue** | **$113K** | **$145K** | **$166K** | **$164K** | **$588K** |
 
 **Expenses:**
 
@@ -1364,7 +1346,7 @@ Founder & CEO
 | Miscellaneous | $3K | $3K | $4K | $5K | **$15K** |
 | **Total Expenses** | **$98K** | **$103K** | **$117K** | **$119K** | **$437K** |
 
-**Net Income:** $169K (profitable!)
+**Net Income:** $151K (profitable!)
 **Burn Rate:** Break-even in Q2, profitable thereafter
 
 **Key Metrics (Year 2 End):**
@@ -1386,8 +1368,8 @@ Founder & CEO
 | Booking Commissions (4%) | $70K | $75K | $80K | $75K | **$300K** |
 | Premium Listings ($5/booking) | $130K | $135K | $140K | $135K | **$540K** |
 | Wine Club Management | $240K | $255K | $265K | $260K | **$1,020K** |
-| Other Revenue | $35K | $38K | $40K | $37K | **$150K** |
-| **Total Revenue** | **$475K** | **$503K** | **$525K** | **$507K** | **$2,010K** |
+| Other Revenue | $25K | $26K | $28K | $26K | **$105K** |
+| **Total Revenue** | **$465K** | **$491K** | **$513K** | **$496K** | **$1,965K** |
 
 **Expenses:**
 
@@ -1403,8 +1385,8 @@ Founder & CEO
 | Miscellaneous | $8K | $10K | $12K | $12K | **$42K** |
 | **Total Expenses** | **$198K** | **$205K** | **$231K** | **$232K** | **$866K** |
 
-**Net Income:** $1,144K (highly profitable)
-**Profit Margin:** 57%
+**Net Income:** $1,099K (highly profitable)
+**Profit Margin:** 56%
 
 **Key Metrics (Year 3 End):**
 - Wineries: 1,200
@@ -1420,11 +1402,11 @@ Founder & CEO
 
 | Revenue Stream | Annual Revenue | % of Total | Margin |
 |----------------|----------------|------------|--------|
-| Wine Club Management | $1,020,000 | 51% | 85% |
+| Wine Club Management | $1,020,000 | 52% | 85% |
 | Premium Listings | $540,000 | 27% | 95% |
 | Booking Commissions (4%) | $300,000 | 15% | -5% |
-| Other (events, affiliates, tools) | $150,000 | 7% | 80% |
-| **TOTAL** | **$2,010,000** | **100%** | **~70%** |
+| Other (event ticketing, premium tools, wine club referrals) | $105,000 | 6% | 80% |
+| **TOTAL** | **$1,965,000** | **100%** | **~70%** |
 
 **Key Insight:** Wine club management becomes the largest revenue driver by Year 2 and represents over half of revenue by Year 3. This transforms the business from a thin-margin marketplace to a high-margin SaaS platform.
 
@@ -1436,52 +1418,52 @@ Founder & CEO
 |---------|---------|----------|------------|--------------|
 | **Year 1** | | | | |
 | Q1 | $0 | $34K | -$34K | $716K* |
-| Q2 | $4K | $36K | -$32K | $688K |
-| Q3 | $25K | $39K | -$14K | $674K |
-| Q4 | $45K | $41K | $4K | $678K |
-| **Year 1 Total** | **$74K** | **$150K** | **-$76K** | **$674K** |
+| Q2 | $3K | $36K | -$33K | $683K |
+| Q3 | $23K | $39K | -$16K | $667K |
+| Q4 | $43K | $41K | $2K | $669K |
+| **Year 1 Total** | **$69K** | **$150K** | **-$81K** | **$669K** |
 | | | | | |
 | **Year 2** | | | | |
-| Q1 | $117K | $98K | $19K | $693K |
-| Q2 | $148K | $103K | $45K | $738K |
-| Q3 | $170K | $117K | $53K | $791K |
-| Q4 | $171K | $119K | $52K | $843K |
-| **Year 2 Total** | **$606K** | **$437K** | **$169K** | **$843K** |
+| Q1 | $113K | $98K | $15K | $684K |
+| Q2 | $145K | $103K | $42K | $726K |
+| Q3 | $166K | $117K | $49K | $775K |
+| Q4 | $164K | $119K | $45K | $820K |
+| **Year 2 Total** | **$588K** | **$437K** | **$151K** | **$820K** |
 | | | | | |
 | **Year 3** | | | | |
-| Q1 | $475K | $198K | $277K | $1,120K |
-| Q2 | $503K | $205K | $298K | $1,418K |
-| Q3 | $525K | $231K | $294K | $1,712K |
-| Q4 | $507K | $232K | $275K | $1,987K |
-| **Year 3 Total** | **$2,010K** | **$866K** | **$1,144K** | **$1,987K** |
+| Q1 | $465K | $198K | $267K | $1,087K |
+| Q2 | $491K | $205K | $286K | $1,373K |
+| Q3 | $513K | $231K | $282K | $1,655K |
+| Q4 | $496K | $232K | $264K | $1,919K |
+| **Year 3 Total** | **$1,965K** | **$866K** | **$1,099K** | **$1,919K** |
 
 *Starting cash balance assumes $750K seed round raised
 
 **Break-Even:** Month 18-20 (midway through Year 2)
 
 **Profitability Trajectory:**
-- Year 1: -$76K loss (expected during MVP phase)
-- Year 2: $169K profit (22% margin)
-- Year 3: $1,144K profit (57% margin)
+- Year 1: -$81K loss (expected during MVP phase)
+- Year 2: $151K profit (26% margin)
+- Year 3: $1,099K profit (56% margin)
 
 ---
 
 ### Sensitivity Analysis
 
 **Best Case Scenario (50% premium adoption, faster growth):**
-- Year 1: $82K revenue
-- Year 2: $686K revenue
-- Year 3: $2.27M revenue
+- Year 1: $77K revenue
+- Year 2: $668K revenue
+- Year 3: $2.23M revenue
 
 **Base Case (30% premium adoption, as modeled):**
-- Year 1: $74K revenue
-- Year 2: $606K revenue
-- Year 3: $2.01M revenue
+- Year 1: $69K revenue
+- Year 2: $588K revenue
+- Year 3: $1.97M revenue
 
 **Conservative Case (20% premium adoption, slower growth):**
-- Year 1: $50K revenue
-- Year 2: $450K revenue
-- Year 3: $1.5M revenue
+- Year 1: $47K revenue
+- Year 2: $440K revenue
+- Year 3: $1.48M revenue
 
 **Key Variables:**
 1. **Winery acquisition rate:** Most critical driver (directly impacts all revenue)
