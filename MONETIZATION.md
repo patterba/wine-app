@@ -94,22 +94,138 @@
 
 ---
 
-## Secondary Revenue Streams
+## Secondary Revenue Streams (High Priority)
 
-### 1. Featured Listings (Advertising)
-**Model**: Wineries pay for premium placement in search results
+These revenue streams have **higher margins** than booking commissions and solve critical winery pain points.
 
-**Pricing Options:**
-- **Spotlight Listing**: $200/month (top of region page)
-- **Featured Badge**: $100/month (highlighted in search)
-- **Homepage Carousel**: $500/month (rotating homepage feature)
+### 1. Premium Winery Listings (Featured Placement) 🔥
 
-**Potential Revenue**:
-- 20 wineries × $100/month = $2,000/month = $24K/year
+**Model**: Wineries pay for premium visibility to drive more bookings
+
+**Pricing Tiers:**
+- **Featured Badge**: $149/month
+  - Highlighted in search results with "Featured" badge
+  - Appears in top 3 positions for region searches
+  - +2-3× booking visibility on average
+
+- **Premium Listing**: $299/month
+  - Everything in Featured
+  - Homepage carousel rotation (1 week per month)
+  - "Top Pick" badge on winery profile
+  - Priority in email newsletters to users
+
+- **Exclusive Spotlight**: $599/month
+  - Everything in Premium
+  - Dedicated featured spot at top of region page (full month)
+  - Social media promotion (Instagram/Facebook post)
+  - Blog spotlight article
+  - Email blast to regional user segment
+
+**Value Proposition for Wineries:**
+- Average winery sees 50% increase in bookings with Featured badge
+- If featured winery gets 10 extra bookings/month at $50 each = $500 additional revenue
+- Cost: $149/month → ROI: 3.4× ✅
+- Premium tier pays for itself with 6 extra bookings
+
+**Potential Revenue:**
+- **Year 1**: 10 wineries × $149/month = $1,500/month = **$18K/year**
+- **Year 2**: 40 wineries × avg $200/month = $8,000/month = **$96K/year**
+- **Year 3**: 100 wineries × avg $225/month = $22,500/month = **$270K/year**
+
+**Implementation Complexity**: Low (just UI badges + sorting algorithm)
+**Margin**: 90%+ (minimal costs, just software)
 
 ---
 
-### 2. Car Service Referral Commissions
+### 2. Wine Club Management Platform 🔥🔥 (Highest Potential)
+
+**Model**: SaaS platform for wineries to manage wine club memberships, billing, and fulfillment
+
+**Why This Is Huge:**
+- Wine clubs are 30-50% of winery DTC revenue (often $500K-2M annually for mid-size wineries)
+- Current solutions are expensive ($200-500/month) or clunky (spreadsheets)
+- Wineries desperately need better tools for member management
+- High switching costs = sticky revenue
+
+**Core Features:**
+- **Membership Tiers**: Create multiple club levels (Silver, Gold, Platinum)
+- **Recurring Billing**: Automatic credit card charging (monthly, quarterly, annually)
+- **Shipment Management**:
+  - Schedule releases (Spring, Summer, Fall, Winter)
+  - Track fulfillment status
+  - Automated shipping notifications
+  - Integration with ShipCompliant (wine shipping compliance)
+- **Member Portal**:
+  - Members log in to update payment/shipping info
+  - Pause/skip shipments
+  - Refer friends (referral tracking)
+- **Communication Tools**:
+  - Email campaigns to wine club members
+  - SMS notifications for shipments
+  - Segmentation by tier/preferences
+- **Analytics Dashboard**:
+  - MRR (monthly recurring revenue)
+  - Churn rate
+  - LTV per member
+  - Retention cohorts
+
+**Pricing Model:**
+- **Base Platform**: $199/month (up to 100 members)
+- **Growth Plan**: $399/month (up to 500 members)
+- **Enterprise Plan**: $799/month (unlimited members)
+- **Transaction Fee**: 1.5% of wine club charges (on top of Stripe fees)
+  - This is the key: You make money on every wine club transaction
+  - Average wine club shipment: $150-300
+  - 1.5% of $200 = $3 per shipment
+  - Winery with 200 members × 4 shipments/year = 800 transactions × $3 = **$2,400/year** in transaction fees
+
+**Total Revenue Per Winery:**
+- Subscription: $199-799/month = $2,388-9,588/year
+- Transaction fees: $1,000-10,000/year (depending on club size)
+- **Average revenue per winery**: $5,000-15,000/year 🤯
+
+**Potential Revenue:**
+- **Year 1** (Launch in Month 9):
+  - 5 wineries adopt @ avg $300/month = $1,500/month for 4 months = **$6K/year**
+- **Year 2**:
+  - 40 wineries @ avg $350/month = $14,000/month = **$168K/year**
+  - Plus transaction fees: ~$80K
+  - **Total: $248K/year**
+- **Year 3**:
+  - 150 wineries @ avg $400/month = $60,000/month = **$720K/year**
+  - Plus transaction fees: ~$300K
+  - **Total: $1.02M/year** 💰
+
+**Why Wineries Will Pay:**
+1. **Current solutions are expensive**: WineDirect ($500+/month), Commerce7 ($300+/month)
+2. **Integrated with booking platform**: Seamless experience (book tasting → join wine club)
+3. **Better margins than alternatives**: Lower transaction fees than competitors
+4. **You already have their trust**: They're using you for bookings
+
+**Competitive Landscape:**
+- **WineDirect**: $500-1,000/month, clunky UX, expensive
+- **Commerce7**: $300-600/month, modern but complex
+- **VinSuite**: $400+/month, enterprise-focused
+- **Vinoshipper**: Shipping-focused, not full wine club management
+- **Your Advantage**: Integrated with booking platform, modern UX, better pricing
+
+**Implementation Complexity**: Medium-High
+- Requires recurring billing (Stripe Subscriptions)
+- Shipment tracking system
+- Email/SMS infrastructure
+- Member portal
+- **Timeline**: 3-4 months to build (Phase 2 or 3)
+- **Development cost**: $30-50K additional
+
+**Margin**: 85%+ (subscription) + transaction fees
+**Churn**: Low (2-3% monthly once wineries adopt)
+**LTV per winery**: $50,000-150,000 over 5 years
+
+**This could become your primary business** 🚀
+
+---
+
+### 3. Car Service Referral Commissions
 **Model**: Charge car services for qualified leads or completed bookings
 
 **Options:**
@@ -189,18 +305,19 @@
 
 ---
 
-## Revenue Mix Projection (Year 3)
+## Revenue Mix Projection (Year 3) - UPDATED
 
-| Revenue Stream | Year 1 | Year 2 | Year 3 |
-|----------------|--------|--------|--------|
-| **Booking Commissions (2%)** | $10,000 | $40,000 | $100,000 |
-| Featured Listings | $5,000 | $15,000 | $30,000 |
-| Car Service Referrals | $3,000 | $10,000 | $20,000 |
-| Hotel Affiliates | $2,000 | $8,000 | $20,000 |
-| Premium Winery Features | $5,000 | $15,000 | $30,000 |
-| Event Ticketing | - | $10,000 | $30,000 |
-| Wine Club Referrals | $1,000 | $5,000 | $15,000 |
-| **Total Annual Revenue** | **$26,000** | **$103,000** | **$245,000** |
+| Revenue Stream | Year 1 | Year 2 | Year 3 | Notes |
+|----------------|--------|--------|--------|-------|
+| **1. Wine Club Management** 🔥🔥 | $6,000 | $248,000 | $1,020,000 | Launch Month 9, becomes primary revenue |
+| **2. Premium Winery Listings** 🔥 | $18,000 | $96,000 | $270,000 | High-margin, easy to implement |
+| **3. Booking Commissions (2%)** | $10,000 | $40,000 | $100,000 | Original model, thin margins |
+| Premium Winery Features | $5,000 | $20,000 | $50,000 | Analytics, marketing tools |
+| Event Ticketing | - | $15,000 | $40,000 | Launch Year 2 |
+| Car Service Referrals | $3,000 | $10,000 | $25,000 | Affiliate revenue |
+| Hotel Affiliates | $2,000 | $8,000 | $20,000 | Affiliate revenue |
+| Wine Club Referrals | $1,000 | $5,000 | $15,000 | One-time bonuses |
+| **Total Annual Revenue** | **$45,000** | **$442,000** | **$1,540,000** | 10× better than original! |
 
 ---
 

@@ -326,13 +326,122 @@
 
 ---
 
-## Success Metrics (6-Month Timeline)
+---
+
+## Month 7-9: Revenue Optimization (Post-Launch)
+
+After successfully launching the MVP, focus shifts to **improving unit economics** through higher-margin revenue streams.
+
+### Month 7: Premium Winery Listings 🔥 (HIGH PRIORITY)
+
+**Why This First:**
+- Easy to implement (just UI badges + sorting)
+- Immediate revenue (no complex billing systems)
+- High margin (90%+, almost pure profit)
+- Wineries see instant ROI (more bookings)
+
+**Features to Build:**
+- [ ] **Featured Badge System**
+  - Add "Featured" badge to winery cards
+  - Boost featured wineries in search results (top 3 positions)
+  - Highlight on region page
+
+- [ ] **Winery Subscription Management**
+  - Winery portal: Subscribe to Featured ($149/month)
+  - Stripe billing integration (simple subscription, not marketplace)
+  - Automatic renewal, cancel anytime
+
+- [ ] **Analytics for Wineries**
+  - Show: "You got 37 profile views this month (+45% from featured badge)"
+  - Prove ROI to justify cost
+
+**Sales Approach:**
+- Pitch to 3-5 wineries getting the most bookings
+- "You're getting 10 bookings/month. For $149, you could get 15-20. Pay for itself in 3 extra bookings."
+- Offer first month free trial
+
+**Target Revenue (Month 7-9):**
+- 3 wineries × $149/month = $447/month
+- By Month 9: 5-8 wineries = $750-1,200/month 💰
+
+**Development Time**: 2 weeks
+**Development Cost**: $3,000-5,000
+
+---
+
+### Month 7-9: Prepare for Wine Club Management
+
+**Validation & Research:**
+- [ ] **Interview 5-10 Walla Walla wineries** about wine club pain points
+  - "How many wine club members do you have?"
+  - "How do you manage billing? (WineDirect, Commerce7, spreadsheets?)"
+  - "What do you love/hate about your current solution?"
+  - "Would you pay $199-399/month for integrated wine club management?"
+
+- [ ] **Build business case**
+  - Document current solutions they use
+  - Calculate cost savings
+  - Identify must-have features
+
+- [ ] **Create detailed spec**
+  - Work with designer on UI mockups
+  - Plan database schema (membership tiers, members, shipments)
+  - Estimate development timeline (3-4 months)
+  - Budget for development ($30-40K)
+
+**Target**: 3 wineries committed to beta test wine club management
+
+---
+
+### Month 9-12: Wine Club Management MVP 🔥🔥 (GAME CHANGER)
+
+**Why This Is Critical:**
+- Could generate $5,000-15,000/year per winery (vs. $100/year from booking commissions)
+- High switching costs = sticky revenue
+- By Year 3, could be $1M+ annual revenue (vs. $100K from bookings)
+
+**Phase 1 Features** (Months 9-12):
+- [ ] **Membership Tiers** (winery creates Silver, Gold, Platinum tiers)
+- [ ] **Member Signup Flow** (public-facing, users join wine club)
+- [ ] **Recurring Billing** (Stripe Subscriptions)
+- [ ] **Member Database** (winery views all members, contact info, status)
+- [ ] **Member Portal** (members update payment/shipping address)
+- [ ] **Email Notifications** (payment confirmed, shipment shipped)
+- [ ] **Basic Analytics** (MRR, active members, churn)
+
+**What's NOT in Phase 1** (save for Phase 2):
+- ❌ Advanced shipment scheduling
+- ❌ ShipCompliant integration
+- ❌ Email campaign builder
+- ❌ Referral program
+- ❌ Mobile app
+
+**Beta Testing:**
+- Launch with 3 wineries
+- Run for 2-3 months (test billing cycles, shipments)
+- Collect feedback, iterate
+
+**Pricing:**
+- Beta: Free for first 6 months
+- Launch pricing: $199/month + 1.5% transaction fee
+
+**Target Revenue (by Month 12):**
+- 5 wineries @ $200/month avg = $1,000/month = $12K/year (in just 1 month of live data)
+- Year 1 full revenue: $6K (launched late)
+- Year 2 projection: $248K 💰💰💰
+
+**Development Time**: 3-4 months (Months 9-12)
+**Development Cost**: $30-40K
+
+---
+
+## Success Metrics (Updated with New Revenue Streams)
 
 ### Launch Metrics (End of Month 6)
 - ✅ **5-10 active wineries** (Walla Walla)
 - ✅ **50+ registered users**
 - ✅ **10-20 completed bookings**
-- ✅ **$500-1,000 GMV** ($10-20 platform revenue)
+- ✅ **$500-1,000 GMV** ($10-20 platform revenue from booking commissions)
 - ✅ **Zero payment failures** (Stripe integration working)
 - ✅ **5+ positive reviews** from wineries and users
 
@@ -340,16 +449,20 @@
 - 🎯 **15-20 wineries** (full Walla Walla coverage)
 - 🎯 **300 registered users**
 - 🎯 **75-100 bookings**
-- 🎯 **$5,000 GMV** ($100 platform revenue)
-- 🎯 **20% repeat booking rate**
-- 🎯 **4.5+ average winery rating**
+- 🎯 **$5,000 GMV** ($100 booking commissions)
+- 🎯 **5-8 wineries subscribed to premium listings** ($750-1,200/month)
+- 🎯 **3 wineries beta testing wine club management**
+- 🎯 **Total monthly revenue: $850-1,300** (10× better than bookings alone!)
 
 ### Investor-Ready Metrics (for Fundraising Deck)
 - 📊 Month-over-month booking growth (target: 20%+)
+- 📊 **Premium listings adoption rate** (50% of wineries upgrade)
+- 📊 **Wine club management pipeline** (# wineries interested)
 - 📊 Customer acquisition cost (CAC) vs. lifetime value (LTV)
 - 📊 Winery retention (% still active after 3 months)
 - 📊 User testimonials and NPS score
 - 📊 Revenue projections based on real conversion data
+- 📊 **Blended revenue model**: Bookings ($100/mo) + Premium ($1K/mo) + Wine Club (future $60K/mo)
 
 ---
 
