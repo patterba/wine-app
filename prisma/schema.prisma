@@ -1,0 +1,244 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  WINERY_OWNER
+  ADMIN
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  NO_SHOW
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  password      String?
+  role          UserRole  @default(USER)
+  emailVerified DateTime?
+  image         String?
+
+  accounts      Account[]
+  sessions      Session[]
+  bookings      Booking[]
+  wineries      Winery[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Region {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?   @db.Text
+  imageUrl    String?
+  state       String
+
+  wineries    Winery[]
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("regions")
+}
+
+model Winery {
+  id               String    @id @default(cuid())
+  name             String
+  slug             String    @unique
+  description      String?   @db.Text
+  address          String
+  city             String
+  state            String
+  zipCode          String
+  latitude         Float?
+  longitude        Float?
+  phone            String?
+  email            String
+  website          String?
+
+  regionId         String
+  region           Region    @relation(fields: [regionId], references: [id])
+
+  ownerId          String
+  owner            User      @relation(fields: [ownerId], references: [id])
+
+  stripeAccountId  String?   @unique
+  isActive         Boolean   @default(true)
+  isFeatured       Boolean   @default(false)
+
+  tastingExperiences TastingExperience[]
+  bookings         Booking[]
+  operatingHours   OperatingHours[]
+  capacitySettings CapacitySetting?
+  images           WineryImage[]
+
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([regionId])
+  @@index([slug])
+  @@map("wineries")
+}
+
+model WineryImage {
+  id          String   @id @default(cuid())
+  wineryId    String
+  winery      Winery   @relation(fields: [wineryId], references: [id], onDelete: Cascade)
+  url         String
+  altText     String?
+  isPrimary   Boolean  @default(false)
+  order       Int      @default(0)
+
+  createdAt   DateTime @default(now())
+
+  @@index([wineryId])
+  @@map("winery_images")
+}
+
+model TastingExperience {
+  id              String    @id @default(cuid())
+  wineryId        String
+  winery          Winery    @relation(fields: [wineryId], references: [id], onDelete: Cascade)
+
+  name            String
+  description     String?   @db.Text
+  priceInCents    Int
+  durationMinutes Int
+  maxPartySize    Int       @default(8)
+  minPartySize    Int       @default(1)
+  isActive        Boolean   @default(true)
+
+  bookings        Booking[]
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([wineryId])
+  @@map("tasting_experiences")
+}
+
+model Booking {
+  id                    String        @id @default(cuid())
+
+  userId                String
+  user                  User          @relation(fields: [userId], references: [id])
+
+  wineryId              String
+  winery                Winery        @relation(fields: [wineryId], references: [id])
+
+  tastingExperienceId   String
+  tastingExperience     TastingExperience @relation(fields: [tastingExperienceId], references: [id])
+
+  bookingDate           DateTime
+  startTime             String        // Format: "HH:MM"
+  partySize             Int
+
+  status                BookingStatus @default(PENDING)
+
+  totalAmountCents      Int
+  platformFeeCents      Int
+
+  stripePaymentIntentId String?       @unique
+
+  specialRequests       String?       @db.Text
+  checkedInAt           DateTime?
+
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([wineryId])
+  @@index([bookingDate])
+  @@index([status])
+  @@map("bookings")
+}
+
+model OperatingHours {
+  id         String   @id @default(cuid())
+  wineryId   String
+  winery     Winery   @relation(fields: [wineryId], references: [id], onDelete: Cascade)
+
+  dayOfWeek  Int      // 0 = Sunday, 6 = Saturday
+  openTime   String   // Format: "HH:MM"
+  closeTime  String   // Format: "HH:MM"
+  isClosed   Boolean  @default(false)
+
+  @@unique([wineryId, dayOfWeek])
+  @@index([wineryId])
+  @@map("operating_hours")
+}
+
+model CapacitySetting {
+  id                   String   @id @default(cuid())
+  wineryId             String   @unique
+  winery               Winery   @relation(fields: [wineryId], references: [id], onDelete: Cascade)
+
+  maxGuestsPerSlot     Int      @default(20)
+  slotIntervalMinutes  Int      @default(30)
+  bufferMinutes        Int      @default(15)
+  advanceBookingDays   Int      @default(90)
+  minimumAdvanceHours  Int      @default(2)
+
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@map("capacity_settings")
+}
