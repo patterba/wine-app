@@ -2,22 +2,28 @@
 
 ## Primary Revenue Model
 
-### 2% Transaction Fee on Tasting Bookings
+### 4% Transaction Fee on Tasting Bookings (UPDATED)
 
 **How It Works:**
 1. User books a wine tasting for $50
 2. User pays $50 via Stripe
 3. Platform holds funds temporarily
 4. After successful tasting (or cancellation window passes):
-   - Platform takes $1.00 (2% fee)
-   - Winery receives $49.00 (98%)
+   - Platform takes $2.00 (4% fee)
+   - Winery receives $48.00 (96%)
    - Stripe takes ~$1.75 (2.9% + $0.30)
 
 **Net Economics:**
 - **User pays**: $50.00
 - **Stripe fee**: $1.75 (3.5% effective rate)
-- **Platform fee**: $1.00 (2%)
-- **Winery receives**: $47.25 (94.5%)
+- **Platform fee**: $2.00 (4%)
+- **Winery receives**: $46.25 (92.5%)
+
+**Why 4% Is Still Competitive:**
+- Tock: 10-15% commission
+- OpenTable: ~10% commission
+- CellarPass: $50-150/month subscription
+- **You're still 60% cheaper than competitors**
 
 ---
 
@@ -98,42 +104,68 @@
 
 These revenue streams have **higher margins** than booking commissions and solve critical winery pain points.
 
-### 1. Premium Winery Listings (Featured Placement) 🔥
+### 1. Premium Winery Listings (Featured Placement) 🔥 - PERFORMANCE-BASED MODEL
 
-**Model**: Wineries pay for premium visibility to drive more bookings
+**Model**: Wineries pay **$5 per confirmed tasting** for premium visibility (plus standard 4% commission)
 
-**Pricing Tiers:**
-- **Featured Badge**: $149/month
-  - Highlighted in search results with "Featured" badge
-  - Appears in top 3 positions for region searches
-  - +2-3× booking visibility on average
+**How It Works:**
+- Featured wineries get top placement in search results
+- Highlighted with "Featured" badge
+- Priority on region pages and homepage carousel
+- **Wineries only pay when they get bookings** (performance-based, no risk)
 
-- **Premium Listing**: $299/month
-  - Everything in Featured
-  - Homepage carousel rotation (1 week per month)
-  - "Top Pick" badge on winery profile
-  - Priority in email newsletters to users
+**Pricing:**
+- **Standard Winery**: 4% commission only ($2 per $50 booking)
+- **Featured Winery**: $5 per booking + 4% commission ($7 per $50 booking)
 
-- **Exclusive Spotlight**: $599/month
-  - Everything in Premium
-  - Dedicated featured spot at top of region page (full month)
-  - Social media promotion (Instagram/Facebook post)
-  - Blog spotlight article
-  - Email blast to regional user segment
+**Economics Per Booking:**
+- User pays: $50
+- Platform takes: $7 ($5 premium + $2 commission)
+- Stripe fees: $1.75
+- **Winery receives: $41.25 (82.5% of booking value)**
 
 **Value Proposition for Wineries:**
-- Average winery sees 50% increase in bookings with Featured badge
-- If featured winery gets 10 extra bookings/month at $50 each = $500 additional revenue
-- Cost: $149/month → ROI: 3.4× ✅
-- Premium tier pays for itself with 6 extra bookings
+- **Zero upfront cost** (vs. $149-599/month subscription)
+- **Pay only for results** (only when you get bookings)
+- **Expected ROI**: Featured wineries get 50-100% more bookings
+  - Regular winery: 10 bookings/month × $48 net = $480/month
+  - Featured winery: 18 bookings/month × $41.25 net = $742/month
+  - Net benefit: $262/month for $90 in extra fees
+  - **ROI: 2.9× ✅**
+
+**Why Wineries Will Pay:**
+- No risk (only pay when you get customers)
+- Clear ROI (more bookings = more revenue)
+- Much better than Yelp ($300+/month) or Google Ads (expensive PPC)
+- Guaranteed top placement in relevant searches
 
 **Potential Revenue:**
-- **Year 1**: 10 wineries × $149/month = $1,500/month = **$18K/year**
-- **Year 2**: 40 wineries × avg $200/month = $8,000/month = **$96K/year**
-- **Year 3**: 100 wineries × avg $225/month = $22,500/month = **$270K/year**
+Assuming 50% of wineries opt for featured placement:
 
-**Implementation Complexity**: Low (just UI badges + sorting algorithm)
-**Margin**: 90%+ (minimal costs, just software)
+- **Year 1**:
+  - 100 wineries onboarded
+  - 50 opt for featured placement
+  - Avg 15 bookings/month each
+  - 50 wineries × 15 bookings × $5 = $3,750/month
+  - **Annual: $45K**
+
+- **Year 2**:
+  - 500 wineries onboarded
+  - 250 opt for featured
+  - Avg 20 bookings/month each
+  - 250 × 20 × $5 = $25,000/month
+  - **Annual: $300K**
+
+- **Year 3**:
+  - 1,200 wineries onboarded
+  - 600 opt for featured
+  - Avg 25 bookings/month each
+  - 600 × 25 × $5 = $75,000/month
+  - **Annual: $900K** 💰
+
+**Implementation Complexity**: Low (just UI badges + sorting algorithm + billing logic)
+**Margin**: 95%+ (minimal costs, nearly pure profit)
+**Advantage over subscription**: Easier to sell (no monthly commitment), scales with volume
 
 ---
 
@@ -305,30 +337,31 @@ These revenue streams have **higher margins** than booking commissions and solve
 
 ---
 
-## Revenue Mix Projection (Year 3) - UPDATED
+## Revenue Mix Projection (Year 3) - UPDATED WITH 4% COMMISSION
 
 | Revenue Stream | Year 1 | Year 2 | Year 3 | Notes |
 |----------------|--------|--------|--------|-------|
 | **1. Wine Club Management** 🔥🔥 | $6,000 | $248,000 | $1,020,000 | Launch Month 9, becomes primary revenue |
-| **2. Premium Winery Listings** 🔥 | $18,000 | $96,000 | $270,000 | High-margin, easy to implement |
-| **3. Booking Commissions (2%)** | $10,000 | $40,000 | $100,000 | Original model, thin margins |
+| **2. Premium Listings ($5/booking)** 🔥 | $45,000 | $300,000 | $900,000 | Performance-based, high-margin |
+| **3. Booking Commissions (4%)** | $20,000 | $80,000 | $200,000 | Doubled from 2% to 4% |
 | Premium Winery Features | $5,000 | $20,000 | $50,000 | Analytics, marketing tools |
 | Event Ticketing | - | $15,000 | $40,000 | Launch Year 2 |
 | Car Service Referrals | $3,000 | $10,000 | $25,000 | Affiliate revenue |
 | Hotel Affiliates | $2,000 | $8,000 | $20,000 | Affiliate revenue |
 | Wine Club Referrals | $1,000 | $5,000 | $15,000 | One-time bonuses |
-| **Total Annual Revenue** | **$45,000** | **$442,000** | **$1,540,000** | 10× better than original! |
+| **Total Annual Revenue** | **$82,000** | **$686,000** | **$2,270,000** | 🚀 Nearly 10× original plan! |
 
 ---
 
-## Unit Economics
+## Unit Economics - UPDATED WITH 4% COMMISSION
 
 ### Cost Structure (Per Booking)
 
 **Average Booking**: $50
 
+#### Standard Winery (4% commission only):
 **Revenue:**
-- Platform fee (2%): $1.00
+- Platform fee (4%): $2.00
 
 **Costs:**
 - Stripe processing (2.9% + $0.30): $1.75
@@ -337,78 +370,74 @@ These revenue streams have **higher margins** than booking commissions and solve
 - Customer support (amortized): $0.20
 - **Total Costs**: $2.10
 
-**Contribution Margin**: -$1.10 per booking ❌
+**Contribution Margin**: -$0.10 per booking (nearly break-even!) ✅
 
-### The Problem: Negative Unit Economics
+#### Featured Winery ($5 + 4% commission):
+**Revenue:**
+- Platform fee: $7.00 ($5 premium + $2 commission)
 
-At 2% commission, we lose money on every transaction due to payment processing fees.
+**Costs:**
+- Stripe processing (2.9% + $0.30): $1.75
+- Email/notification: $0.05
+- Hosting/infrastructure: $0.10
+- Customer support (amortized): $0.20
+- **Total Costs**: $2.10
 
-### Solutions:
+**Contribution Margin**: $4.90 per booking 🎉
 
-#### 1. Adjust Commission Rate to 5%
-- **Revenue**: $2.50 per $50 booking
-- **Costs**: $2.10
-- **Profit**: $0.40 per booking ✅
-- **Downside**: Less competitive, slower winery adoption
+### The Solution: Much Better Unit Economics!
 
-#### 2. Pass Payment Processing to Customer
-- **User pays**: $50 + $1.75 processing = $51.75
-- **Platform Revenue**: $1.00 (2% of $50)
-- **Costs**: $0.35 (email, hosting, support)
-- **Profit**: $0.65 per booking ✅
-- **Downside**: Less attractive pricing for users
+At **4% commission**, we're nearly break-even on standard bookings. But with **50% of bookings from featured wineries** (paying $5 extra), the blended economics work beautifully:
 
-#### 3. Minimum Transaction Fee
-- **Platform fee**: Greater of 2% OR $2.00
-- **On $50 booking**: $2.00 fee
-- **Costs**: $2.10
-- **Profit**: -$0.10 (close to break-even)
-- **On $100 booking**: $2.00 fee (2%), Costs: $3.20, Profit: -$1.20 ❌
-- **Needs refinement**: Maybe $2.50 minimum
+**Blended Margin (50/50 mix):**
+- 50% standard bookings: -$0.10 × 50% = -$0.05
+- 50% featured bookings: $4.90 × 50% = $2.45
+- **Average margin per booking: $2.40** ✅
 
-#### 4. Focus on Secondary Revenue (Recommended for MVP)
-- **Accept thin/negative margins on booking fees** initially
-- **Subsidize with featured listings, car services, premium features**
-- **Scale to volume** where support costs amortize better
-- **Path to profitability**:
-  - Year 1: -$5,000 (investment phase)
-  - Year 2: $10,000 (break-even approach)
-  - Year 3: $50,000+ (profitable with scale + secondary revenue)
+**This is sustainable and profitable!**
 
 ---
 
-## Recommended Monetization Strategy
+## Recommended Monetization Strategy (UPDATED)
 
-### Phase 1 (MVP): Market Entry - Low Friction
+### Phase 1 (Months 1-6): MVP Launch
 **Goal**: Acquire wineries and users, prove product-market fit
 
-- **Booking Commission**: 2% (loss leader)
-- **No listing fees or subscriptions** (remove barriers)
-- **Focus**: Get to 100 bookings/month to validate demand
-
-**Expected**: Negative unit economics, but cheap customer acquisition
-
----
-
-### Phase 2 (Months 4-6): Introduce Secondary Revenue
-**Goal**: Improve unit economics without harming growth
-
-- **Booking Commission**: Still 2%
-- **Launch Featured Listings**: $100-200/month
-- **Launch Car Service Directory**: $50/month listing fee
-- **Hotel Affiliates**: Integrate affiliate links
-- **Goal**: Get to break-even with blended revenue
+- **Booking Commission**: 4% (still highly competitive vs. 10-15% competitors)
+- **No premium listings yet** (keep it simple for MVP)
+- **Focus**: Get to 50-100 bookings/month to validate demand
+- **Expected**: Nearly break-even unit economics (-$0.10 per booking)
 
 ---
 
-### Phase 3 (Months 7-12): Premium Features & Optimization
-**Goal**: Path to profitability
+### Phase 2 (Month 7): Launch Performance-Based Premium Listings
+**Goal**: Drive profitability with high-margin upsells
 
-- **Booking Commission**: Consider increasing to 3% OR add $1 minimum
-- **Premium Winery Tools**: Launch $49-99/month tiers
-- **Event Ticketing**: Launch with 5% commission
-- **White-Label**: Pitch to 2-3 regional tourism boards
-- **Goal**: $100K annual run rate
+- **Booking Commission**: 4% (unchanged)
+- **Launch Premium Listings**: $5 per booking (no monthly commitment)
+- **Sales pitch**: "Get 2× more bookings, pay only when you get customers"
+- **Target**: 50% of wineries opt in (easy sell since it's performance-based)
+- **Result**: Blended margin becomes $2.40 per booking (profitable!)
+
+---
+
+### Phase 3 (Months 9-12): Wine Club Management Launch
+**Goal**: Add high-LTV recurring revenue stream
+
+- **Keep booking + premium listings** (working well)
+- **Launch wine club management beta** (3 wineries, free for 6 months)
+- **Pricing**: $199-399/month + 1.5% transaction fees
+- **Goal**: Prove wine club management product-market fit
+
+---
+
+### Phase 4 (Year 2+): Scale All Revenue Streams
+**Goal**: $686K annual run rate by Year 2
+
+- **Booking commission (4%)**: Maintain competitive advantage
+- **Premium listings ($5/booking)**: Target 50% adoption across all wineries
+- **Wine club management**: Expand to 40 wineries ($248K revenue)
+- **Additional**: Premium tools, event ticketing, car services
 
 ---
 
