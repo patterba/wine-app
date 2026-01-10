@@ -140,28 +140,28 @@ These revenue streams have **higher margins** than booking commissions and solve
 - Guaranteed top placement in relevant searches
 
 **Potential Revenue:**
-Assuming 50% of wineries opt for featured placement:
+Assuming 30% of wineries opt for featured placement (conservative):
 
 - **Year 1**:
   - 100 wineries onboarded
-  - 50 opt for featured placement
+  - 30 opt for featured placement
   - Avg 15 bookings/month each
-  - 50 wineries × 15 bookings × $5 = $3,750/month
-  - **Annual: $45K**
+  - 30 wineries × 15 bookings × $5 = $2,250/month
+  - **Annual: $27K**
 
 - **Year 2**:
   - 500 wineries onboarded
-  - 250 opt for featured
+  - 150 opt for featured
   - Avg 20 bookings/month each
-  - 250 × 20 × $5 = $25,000/month
-  - **Annual: $300K**
+  - 150 × 20 × $5 = $15,000/month
+  - **Annual: $180K**
 
 - **Year 3**:
   - 1,200 wineries onboarded
-  - 600 opt for featured
+  - 360 opt for featured
   - Avg 25 bookings/month each
-  - 600 × 25 × $5 = $75,000/month
-  - **Annual: $900K** 💰
+  - 360 × 25 × $5 = $45,000/month
+  - **Annual: $540K** 💰
 
 **Implementation Complexity**: Low (just UI badges + sorting algorithm + billing logic)
 **Margin**: 95%+ (minimal costs, nearly pure profit)
@@ -337,19 +337,19 @@ Assuming 50% of wineries opt for featured placement:
 
 ---
 
-## Revenue Mix Projection (Year 3) - UPDATED WITH 4% COMMISSION
+## Revenue Mix Projection (Year 3) - UPDATED (Conservative Premium, Higher Volume)
 
 | Revenue Stream | Year 1 | Year 2 | Year 3 | Notes |
 |----------------|--------|--------|--------|-------|
 | **1. Wine Club Management** 🔥🔥 | $6,000 | $248,000 | $1,020,000 | Launch Month 9, becomes primary revenue |
-| **2. Premium Listings ($5/booking)** 🔥 | $45,000 | $300,000 | $900,000 | Performance-based, high-margin |
-| **3. Booking Commissions (4%)** | $20,000 | $80,000 | $200,000 | Doubled from 2% to 4% |
+| **2. Booking Commissions (4%)** 🔥 | $30,000 | $120,000 | $300,000 | 50% more volume than original |
+| **3. Premium Listings ($5/booking)** | $27,000 | $180,000 | $540,000 | 30% adoption (conservative) |
 | Premium Winery Features | $5,000 | $20,000 | $50,000 | Analytics, marketing tools |
 | Event Ticketing | - | $15,000 | $40,000 | Launch Year 2 |
 | Car Service Referrals | $3,000 | $10,000 | $25,000 | Affiliate revenue |
 | Hotel Affiliates | $2,000 | $8,000 | $20,000 | Affiliate revenue |
 | Wine Club Referrals | $1,000 | $5,000 | $15,000 | One-time bonuses |
-| **Total Annual Revenue** | **$82,000** | **$686,000** | **$2,270,000** | 🚀 Nearly 10× original plan! |
+| **Total Annual Revenue** | **$74,000** | **$606,000** | **$2,010,000** | More conservative but still strong! |
 
 ---
 
@@ -387,14 +387,14 @@ Assuming 50% of wineries opt for featured placement:
 
 ### The Solution: Much Better Unit Economics!
 
-At **4% commission**, we're nearly break-even on standard bookings. But with **50% of bookings from featured wineries** (paying $5 extra), the blended economics work beautifully:
+At **4% commission**, we're nearly break-even on standard bookings. With **30% of bookings from featured wineries** (paying $5 extra), the blended economics are still profitable:
 
-**Blended Margin (50/50 mix):**
-- 50% standard bookings: -$0.10 × 50% = -$0.05
-- 50% featured bookings: $4.90 × 50% = $2.45
-- **Average margin per booking: $2.40** ✅
+**Blended Margin (30% featured, 70% standard):**
+- 70% standard bookings: -$0.10 × 70% = -$0.07
+- 30% featured bookings: $4.90 × 30% = $1.47
+- **Average margin per booking: $1.40** ✅
 
-**This is sustainable and profitable!**
+**This is sustainable and profitable!** While the margin is lower than 50% adoption, 30% is more realistic in early stages. As the platform proves ROI, we can drive adoption higher.
 
 ---
 
