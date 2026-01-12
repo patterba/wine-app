@@ -130,3 +130,119 @@ export interface WineryOnboardingData {
   website?: string;
   regionId: string;
 }
+
+// Wine Club Management types
+
+export interface WineClub {
+  id: string;
+  wineryId: string;
+  name: string;
+  description: string | null;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface MembershipTier {
+  id: string;
+  wineClubId: string;
+  name: string;
+  description: string | null;
+  priceInCents: number;
+  billingFrequency: 'MONTHLY' | 'QUARTERLY' | 'BIANNUAL' | 'ANNUAL';
+  bottlesPerShipment: number;
+  shipmentsPerYear: number;
+  discountPercent: number;
+  isActive: boolean;
+  order: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface WineClubMembership {
+  id: string;
+  userId: string;
+  wineClubId: string;
+  tierId: string;
+  status: 'ACTIVE' | 'PAUSED' | 'CANCELLED' | 'PAST_DUE';
+  stripeSubscriptionId: string | null;
+  stripeCustomerId: string | null;
+  shippingName: string;
+  shippingAddress: string;
+  shippingCity: string;
+  shippingState: string;
+  shippingZipCode: string;
+  shippingPhone: string | null;
+  startDate: Date;
+  nextBillingDate: Date | null;
+  pausedUntil: Date | null;
+  cancelledAt: Date | null;
+  cancellationReason: string | null;
+  referredBy: string | null;
+  referralCode: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Shipment {
+  id: string;
+  wineClubId: string;
+  name: string;
+  scheduledDate: Date;
+  description: string | null;
+  status: 'SCHEDULED' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED' | 'SKIPPED';
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ShipmentMembership {
+  id: string;
+  shipmentId: string;
+  membershipId: string;
+  status: 'SCHEDULED' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED' | 'SKIPPED';
+  isSkipped: boolean;
+  skippedReason: string | null;
+  trackingNumber: string | null;
+  carrier: string | null;
+  shippedDate: Date | null;
+  deliveredDate: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ShipmentItem {
+  id: string;
+  shipmentId: string;
+  wineName: string;
+  vintage: string | null;
+  varietal: string | null;
+  quantity: number;
+  bottleImageUrl: string | null;
+  description: string | null;
+}
+
+// Member Portal types
+export interface MemberDashboardData {
+  membership: WineClubMembership;
+  winery: Winery;
+  tier: MembershipTier;
+  upcomingShipments: ShipmentWithDetails[];
+  pastShipments: ShipmentWithDetails[];
+}
+
+export interface ShipmentWithDetails extends Shipment {
+  items: ShipmentItem[];
+  membershipDetails: ShipmentMembership;
+}
+
+// Form types for wine club
+export interface MembershipSignupData {
+  tierId: string;
+  shippingName: string;
+  shippingAddress: string;
+  shippingCity: string;
+  shippingState: string;
+  shippingZipCode: string;
+  shippingPhone?: string;
+  referralCode?: string;
+}

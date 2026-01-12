@@ -37,6 +37,7 @@ model User {
   sessions      Session[]
   bookings      Booking[]
   wineries      Winery[]
+  wineClubMemberships WineClubMembership[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -129,6 +130,7 @@ model Winery {
   operatingHours   OperatingHours[]
   capacitySettings CapacitySetting?
   images           WineryImage[]
+  wineClubs        WineClub[]
 
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
@@ -241,4 +243,187 @@ model CapacitySetting {
   updatedAt            DateTime @updatedAt
 
   @@map("capacity_settings")
+}
+
+// Wine Club Management Models
+
+enum MembershipStatus {
+  ACTIVE
+  PAUSED
+  CANCELLED
+  PAST_DUE
+}
+
+enum ShipmentStatus {
+  SCHEDULED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  SKIPPED
+}
+
+enum BillingFrequency {
+  MONTHLY
+  QUARTERLY
+  BIANNUAL
+  ANNUAL
+}
+
+model WineClub {
+  id          String   @id @default(cuid())
+  wineryId    String
+  winery      Winery   @relation(fields: [wineryId], references: [id], onDelete: Cascade)
+
+  name        String
+  description String?  @db.Text
+  isActive    Boolean  @default(true)
+
+  tiers       MembershipTier[]
+  memberships WineClubMembership[]
+  shipments   Shipment[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([wineryId])
+  @@map("wine_clubs")
+}
+
+model MembershipTier {
+  id              String   @id @default(cuid())
+  wineClubId      String
+  wineClub        WineClub @relation(fields: [wineClubId], references: [id], onDelete: Cascade)
+
+  name            String   // e.g., "Silver", "Gold", "Platinum"
+  description     String?  @db.Text
+  priceInCents    Int      // Per billing period
+  billingFrequency BillingFrequency
+  bottlesPerShipment Int   @default(3)
+  shipmentsPerYear   Int   @default(4)
+  discountPercent    Int   @default(0)
+
+  isActive        Boolean  @default(true)
+  order           Int      @default(0)
+
+  memberships     WineClubMembership[]
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([wineClubId])
+  @@map("membership_tiers")
+}
+
+model WineClubMembership {
+  id                    String           @id @default(cuid())
+
+  userId                String
+  user                  User             @relation(fields: [userId], references: [id])
+
+  wineClubId            String
+  wineClub              WineClub         @relation(fields: [wineClubId], references: [id])
+
+  tierId                String
+  tier                  MembershipTier   @relation(fields: [tierId], references: [id])
+
+  status                MembershipStatus @default(ACTIVE)
+
+  // Stripe subscription
+  stripeSubscriptionId  String?          @unique
+  stripeCustomerId      String?
+
+  // Shipping info
+  shippingName          String
+  shippingAddress       String
+  shippingCity          String
+  shippingState         String
+  shippingZipCode       String
+  shippingPhone         String?
+
+  // Membership dates
+  startDate             DateTime         @default(now())
+  nextBillingDate       DateTime?
+  pausedUntil           DateTime?
+  cancelledAt           DateTime?
+  cancellationReason    String?          @db.Text
+
+  // Referrals
+  referredBy            String?          // User ID who referred them
+  referralCode          String?          @unique
+
+  shipments             ShipmentMembership[]
+
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+
+  @@index([userId])
+  @@index([wineClubId])
+  @@index([status])
+  @@map("wine_club_memberships")
+}
+
+model Shipment {
+  id                String   @id @default(cuid())
+  wineClubId        String
+  wineClub          WineClub @relation(fields: [wineClubId], references: [id])
+
+  name              String   // e.g., "Spring 2025 Release"
+  scheduledDate     DateTime
+
+  description       String?  @db.Text
+  status            ShipmentStatus @default(SCHEDULED)
+
+  members           ShipmentMembership[]
+  items             ShipmentItem[]
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([wineClubId])
+  @@index([scheduledDate])
+  @@map("shipments")
+}
+
+model ShipmentMembership {
+  id                  String   @id @default(cuid())
+
+  shipmentId          String
+  shipment            Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  membershipId        String
+  membership          WineClubMembership @relation(fields: [membershipId], references: [id])
+
+  status              ShipmentStatus @default(SCHEDULED)
+  isSkipped           Boolean  @default(false)
+  skippedReason       String?
+
+  // Tracking
+  trackingNumber      String?
+  carrier             String?
+  shippedDate         DateTime?
+  deliveredDate       DateTime?
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@unique([shipmentId, membershipId])
+  @@index([membershipId])
+  @@map("shipment_memberships")
+}
+
+model ShipmentItem {
+  id          String   @id @default(cuid())
+  shipmentId  String
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  wineName    String
+  vintage     String?
+  varietal    String?
+  quantity    Int      @default(1)
+
+  bottleImageUrl String?
+  description    String? @db.Text
+
+  @@index([shipmentId])
+  @@map("shipment_items")
 }
