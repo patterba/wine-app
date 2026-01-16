@@ -10,6 +10,11 @@ interface Winery {
   website: string;
   reservationUrl: string;
   region: string;
+  wineVarietals?: string;
+  hoursOfOperation?: string;
+  daysOpen?: string;
+  visitType?: string;
+  photoUrl?: string;
   latitude?: string;
   longitude?: string;
   notes?: string;
@@ -27,6 +32,9 @@ const wineries: Winery[] = [
     website: 'https://www.abeja.net',
     reservationUrl: 'https://www.abeja.net/tastings.php',
     region: 'Walla Walla Valley',
+    wineVarietals: 'Cabernet Sauvignon, Merlot, Syrah, Chardonnay',
+    visitType: 'By Appointment',
+    photoUrl: 'https://www.abeja.net/images/Abeja-Snow-Vineyard.jpg',
   },
   {
     name: 'Adamant Cellars',
@@ -485,6 +493,10 @@ const wineries: Winery[] = [
     website: 'https://gramercycellars.com',
     reservationUrl: 'https://gramercycellars.com/visit/',
     region: 'Walla Walla Valley',
+    wineVarietals: 'Cabernet Sauvignon, Syrah, Pinot Noir, Cabernet Franc, Mourvèdre, Rosé, Picpoul',
+    visitType: 'By Appointment',
+    photoUrl: 'https://gramercycellars.com/wp-content/uploads/2025/03/Tasting-Room-Mast-1500x900.jpg',
+    notes: 'Specializes in Rhône and Bordeaux blends',
   },
   {
     name: 'Grosgrain Vineyards',
@@ -836,6 +848,10 @@ const wineries: Winery[] = [
     website: 'https://www.sevenhillswinery.com',
     reservationUrl: 'https://www.sevenhillswinery.com/visit/',
     region: 'Walla Walla Valley - Downtown',
+    wineVarietals: 'Merlot, Cabernet Sauvignon',
+    visitType: 'Private Seated Tastings',
+    photoUrl: 'https://sevenhillswinery.com/wp-content/uploads/2023/05/Seven-Hills-Winery-Pentad-Tasting-Room.png',
+    notes: 'Downtown Walla Walla\'s only historic working winemaking facility, established 1988',
   },
   {
     name: 'Sleight of Hand Cellars',
@@ -1057,6 +1073,11 @@ const wsData = [
     'Website',
     'Reservation URL',
     'Region/District',
+    'Wine Varietals',
+    'Hours of Operation',
+    'Days Open',
+    'Visit Type',
+    'Photo URL',
     'Latitude',
     'Longitude',
     'Notes',
@@ -1072,6 +1093,11 @@ const wsData = [
     winery.website,
     winery.reservationUrl,
     winery.region,
+    winery.wineVarietals || 'Cabernet Sauvignon, Merlot, Syrah (typical Walla Walla)',
+    winery.hoursOfOperation || 'Contact winery for hours',
+    winery.daysOpen || 'Varies - check website',
+    winery.visitType || (winery.reservationUrl ? 'By Appointment/Reservation' : 'Contact for details'),
+    winery.photoUrl || '',
     winery.latitude || '',
     winery.longitude || '',
     winery.notes || '',
@@ -1091,6 +1117,11 @@ ws['!cols'] = [
   { wch: 40 }, // Website
   { wch: 50 }, // Reservation URL
   { wch: 35 }, // Region/District
+  { wch: 45 }, // Wine Varietals
+  { wch: 30 }, // Hours of Operation
+  { wch: 25 }, // Days Open
+  { wch: 25 }, // Visit Type
+  { wch: 50 }, // Photo URL
   { wch: 12 }, // Latitude
   { wch: 12 }, // Longitude
   { wch: 50 }, // Notes
@@ -1108,7 +1139,15 @@ console.log(`  Total wineries: ${wineries.length}`);
 console.log(`  Regions covered:`);
 console.log(`    - Walla Walla Valley (WA)`);
 console.log(`    - The Rocks District of Milton-Freewater (OR)`);
+console.log(`\nData fields included:`);
+console.log(`  • Contact: Name, Address, Phone, Website`);
+console.log(`  • Reservations: Booking URLs, Visit Type`);
+console.log(`  • Wine Info: Varietals (Cab, Merlot, Syrah, etc.)`);
+console.log(`  • Operations: Hours, Days Open`);
+console.log(`  • Media: Photo URLs`);
+console.log(`  • Location: Lat/Long coordinates (placeholders)`);
 console.log(`\nNext steps:`);
 console.log(`  1. Review and verify the data`);
-console.log(`  2. Add latitude/longitude coordinates if needed`);
-console.log(`  3. Import into your database`);
+console.log(`  2. Visit individual winery websites to populate specific hours/photos`);
+console.log(`  3. Add latitude/longitude coordinates using geocoding`);
+console.log(`  4. Import into your database`);
