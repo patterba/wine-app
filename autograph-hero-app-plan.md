@@ -323,8 +323,16 @@ React Native + Expo (managed workflow)
 ├── @tanstack/react-query # Data fetching + caching
 ├── zustand              # Lightweight state management
 ├── expo-location        # User location for alerts
-└── nativewind           # Tailwind CSS for React Native
+├── react-native-paper   # UI component library (Material Design 3)
+└── react-native-paper/icons # Icon set
 ```
+
+**Why React Native Paper:**
+- Pre-built components (buttons, cards, lists, search bars, modals)
+- Consistent Material Design 3 styling
+- Dark mode support built-in
+- Well-documented, actively maintained
+- Faster development = hit 45-day deadline
 
 ### Supabase (Backend)
 ```
@@ -365,104 +373,124 @@ Expo Push Notifications (free)
 
 ---
 
-## Development Phases (iOS + Supabase)
+## 45-Day Development Sprint
 
-### Phase 1: Project Setup (Week 1)
-- [ ] Create Expo project: `npx create-expo-app@latest autograph-hero`
-- [ ] Set up Supabase project (free tier)
-- [ ] Run database migrations (create tables above)
-- [ ] Configure Supabase client in app
-- [ ] Set up Apple Developer account ($99/year) if not already
-- [ ] Configure Apple Sign-In in Supabase
+**Timeline:** 45 days to working TestFlight build
+**Start Date:** ___________
+**Target Date:** ___________
 
-### Phase 2: Core App Screens (Weeks 2-4)
-- [ ] **Onboarding flow**
-  - [ ] Welcome/value prop screens
-  - [ ] Sign up (email or Apple Sign-In)
-  - [ ] Location permission request
-  - [ ] Push notification permission
-- [ ] **Favorites selection**
-  - [ ] Sport category picker (NFL, MLB, NBA, etc.)
-  - [ ] Team search/select
-  - [ ] Player search/select
-  - [ ] "Done" saves to Supabase
-- [ ] **Event feed (home screen)**
-  - [ ] List of upcoming events
-  - [ ] Filter by: All / My Favorites / Near Me
-  - [ ] Pull to refresh
-  - [ ] Event card: signer photo, name, date, city
-- [ ] **Event detail screen**
-  - [ ] Full event info
-  - [ ] Map preview
-  - [ ] "Get Directions" button
-  - [ ] "Add to Calendar" (future)
-  - [ ] Ticket link (if paid event)
-- [ ] **Profile/Settings**
-  - [ ] Edit favorites
-  - [ ] Change location / alert radius
-  - [ ] Notification preferences
-  - [ ] Sign out
+### Week 1: Foundation (Days 1-7)
 
-### Phase 3: Data Pipeline (Weeks 5-7)
-- [ ] **Set up scraper worker**
-  - [ ] Create Node.js project
-  - [ ] Deploy to Railway free tier
-  - [ ] Connect to Supabase with service role key
-- [ ] **Build first scraper**
-  - [ ] Pick source (SigningsHotline?)
-  - [ ] Parse event listings
-  - [ ] Normalize signer names
-  - [ ] Insert into Supabase
-- [ ] **Deduplication logic**
-  - [ ] Check existing events before insert
-  - [ ] Match on: normalized_name + city + date
-- [ ] **Seed initial data**
-  - [ ] Populate teams table (all major sports)
-  - [ ] Populate signers from first scrape
-- [ ] **Schedule scraping**
-  - [ ] Run every 6-12 hours via cron
+| Day | Task |
+|-----|------|
+| 1 | Create Supabase project, run all SQL migrations |
+| 1 | Create Expo project, install dependencies |
+| 2 | Set up Supabase client, configure auth |
+| 2 | Apple Developer account setup (if needed) |
+| 3 | Build auth screens (sign up / sign in with email) |
+| 4 | Build onboarding flow (welcome, permissions) |
+| 5 | Seed teams table (NFL, MLB, NBA, NHL) |
+| 6-7 | Build favorites selection screen (teams only for MVP) |
 
-### Phase 4: Push Notifications (Weeks 8-9)
-- [ ] **Expo Push setup**
-  - [ ] Request push token on app launch
-  - [ ] Save token to profiles table
-- [ ] **Supabase Edge Function: process-new-event**
-  - [ ] Query users who favorite this signer/team
-  - [ ] Filter by location radius
-  - [ ] Send via Expo Push API
-  - [ ] Log to notifications_sent table
-- [ ] **Database webhook trigger**
-  - [ ] Trigger Edge Function on new verified event
-- [ ] **In-app notifications**
-  - [ ] Notification history screen
-  - [ ] Mark as read
+**Deliverable:** User can sign up and select favorite teams
 
-### Phase 5: Polish & TestFlight (Weeks 10-12)
-- [ ] UI polish and animations
-- [ ] Error handling and loading states
-- [ ] Offline support (cached events)
-- [ ] App icon and splash screen
-- [ ] Build with EAS: `eas build --platform ios`
-- [ ] Submit to TestFlight
-- [ ] Beta test with 10-20 users
-- [ ] Iterate based on feedback
+### Week 2: Core Screens (Days 8-14)
 
-### Phase 6: App Store Launch (Weeks 13-14)
-- [ ] App Store screenshots
-- [ ] App Store description and keywords
-- [ ] Privacy policy page
-- [ ] Submit for review
-- [ ] Launch!
+| Day | Task |
+|-----|------|
+| 8-9 | Build event feed screen (list view with Paper components) |
+| 10 | Build event detail screen |
+| 11 | Add "Near Me" filter (location permission + radius) |
+| 12 | Build profile/settings screen |
+| 13 | Connect all screens to Supabase (real data) |
+| 14 | Buffer / bug fixes |
 
-### Future Enhancements (Post-Launch)
-- [ ] Android app (reuse 95% of code)
-- [ ] Map view of events
-- [ ] Calendar sync
-- [ ] User event submissions
-- [ ] Business accounts
-- [ ] Social features ("I'm going")
-- [ ] Premium tier (unlimited favorites, no ads)
-- [ ] Web app to replace WordPress
+**Deliverable:** Complete app navigation, all screens functional
+
+### Week 3: Data Pipeline (Days 15-21)
+
+| Day | Task |
+|-----|------|
+| 15 | Analyze scraping target, plan extraction |
+| 16-17 | Build first scraper (Node.js + Puppeteer) |
+| 18 | Deploy scraper to Railway, connect to Supabase |
+| 19 | Build signer normalization + deduplication |
+| 20 | Set up cron schedule (every 12 hours) |
+| 21 | Verify real data flowing into app |
+
+**Deliverable:** Real events appearing in app from scraper
+
+### Week 4: Notifications (Days 22-28)
+
+| Day | Task |
+|-----|------|
+| 22 | Expo Push setup, save token to profile |
+| 23-24 | Build Edge Function for notification matching |
+| 25 | Set up database trigger on new events |
+| 26 | Test end-to-end: new event → push notification |
+| 27 | Add notification preferences to settings |
+| 28 | Buffer / bug fixes |
+
+**Deliverable:** Push notifications working for favorited teams
+
+### Week 5: Polish & TestFlight (Days 29-35)
+
+| Day | Task |
+|-----|------|
+| 29 | App icon and splash screen |
+| 30 | Loading states, error handling |
+| 31 | Pull-to-refresh, empty states |
+| 32 | EAS build setup, first iOS build |
+| 33 | Fix build issues, test on device |
+| 34 | Privacy policy page (simple hosted page) |
+| 35 | Submit to TestFlight |
+
+**Deliverable:** App on TestFlight
+
+### Week 6: Beta & Iterate (Days 36-42)
+
+| Day | Task |
+|-----|------|
+| 36-38 | Invite 10-20 beta testers |
+| 39-41 | Fix critical bugs from feedback |
+| 42 | Prepare App Store assets |
+
+**Deliverable:** Stable beta, ready for App Store
+
+### Days 43-45: App Store Submission
+
+| Day | Task |
+|-----|------|
+| 43 | App Store screenshots (6.7" and 5.5") |
+| 44 | Write description, keywords, categories |
+| 45 | Submit for review |
+
+**Deliverable:** App submitted to App Store
+
+---
+
+## MVP Scope (What's IN for 45 days)
+
+✅ Email authentication (Apple Sign-In can wait)
+✅ Favorite teams (not individual players yet)
+✅ Event feed with filters
+✅ Event details
+✅ Push notifications for favorite teams
+✅ Location-based filtering
+✅ One scraper source
+
+## Post-Launch (What's OUT for 45 days)
+
+❌ Apple Sign-In (add after launch)
+❌ Favorite individual players (teams only for MVP)
+❌ Multiple scraper sources (start with one)
+❌ Map view
+❌ Calendar sync
+❌ User submissions
+❌ Business accounts
+❌ In-app notification history
+❌ Android (reuse 95% code later)
+❌ WordPress migration (not needed - start fresh)
 
 ---
 
@@ -599,55 +627,121 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 
 ---
 
-## Immediate Next Steps
+## Day 1 Checklist
 
-### This Week
-1. **Create Supabase project**
-   - Go to supabase.com → New Project
-   - Save the project URL and anon key
-   - Run the SQL migrations above in SQL Editor
+### Morning: Supabase Setup
+```bash
+# 1. Go to supabase.com → New Project
+# 2. Save these values:
+#    - Project URL: https://xxx.supabase.co
+#    - Anon Key: eyJhbGc...
+#    - Service Role Key: eyJhbGc... (for scraper only, keep secret!)
 
-2. **Set up Expo project**
-   ```bash
-   npx create-expo-app@latest autograph-hero --template tabs
-   cd autograph-hero
-   npx expo install @supabase/supabase-js expo-notifications expo-location
-   npm install @tanstack/react-query zustand nativewind
-   ```
+# 3. In Supabase Dashboard → SQL Editor, run:
+#    - All CREATE TABLE statements from "Core Tables" section above
+#    - All RLS policies from "Row Level Security" section above
+#    - Create indexes
+```
 
-3. **Create Supabase client**
-   ```typescript
-   // lib/supabase.ts
-   import { createClient } from '@supabase/supabase-js';
+### Afternoon: Expo Project Setup
+```bash
+# Create project
+npx create-expo-app@latest autograph-hero --template tabs
+cd autograph-hero
 
-   const supabaseUrl = 'YOUR_PROJECT_URL';
-   const supabaseAnonKey = 'YOUR_ANON_KEY';
+# Install dependencies
+npx expo install @supabase/supabase-js expo-notifications expo-location expo-secure-store
+npm install react-native-paper react-native-safe-area-context @tanstack/react-query zustand
 
-   export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-   ```
+# Create Supabase client
+mkdir lib
+```
 
-4. **Seed teams data**
-   - Add all NFL, MLB, NBA, NHL teams to the teams table
-   - This gives users something to favorite immediately
+```typescript
+// lib/supabase.ts
+import 'react-native-url-polyfill/auto';
+import * as SecureStore from 'expo-secure-store';
+import { createClient } from '@supabase/supabase-js';
 
-### Next Week
-5. **Build first screens**
-   - Authentication (sign in / sign up)
-   - Event feed with mock data
-   - Favorites selection
+const ExpoSecureStoreAdapter = {
+  getItem: (key: string) => SecureStore.getItemAsync(key),
+  setItem: (key: string, value: string) => SecureStore.setItemAsync(key, value),
+  removeItem: (key: string) => SecureStore.deleteItemAsync(key),
+};
 
-6. **Start first scraper**
-   - Analyze easiest source
-   - Build Node.js script to parse and insert
+const supabaseUrl = 'YOUR_PROJECT_URL';
+const supabaseAnonKey = 'YOUR_ANON_KEY';
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    storage: ExpoSecureStoreAdapter,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: false,
+  },
+});
+```
+
+### Evening: Seed Teams Data
+```sql
+-- Run in Supabase SQL Editor
+-- NFL Teams (sample - add all 32)
+INSERT INTO teams (name, sport, city) VALUES
+('Arizona Cardinals', 'NFL', 'Phoenix'),
+('Atlanta Falcons', 'NFL', 'Atlanta'),
+('Baltimore Ravens', 'NFL', 'Baltimore'),
+('Buffalo Bills', 'NFL', 'Buffalo'),
+('Carolina Panthers', 'NFL', 'Charlotte'),
+('Chicago Bears', 'NFL', 'Chicago'),
+('Cincinnati Bengals', 'NFL', 'Cincinnati'),
+('Cleveland Browns', 'NFL', 'Cleveland'),
+('Dallas Cowboys', 'NFL', 'Dallas'),
+('Denver Broncos', 'NFL', 'Denver'),
+('Detroit Lions', 'NFL', 'Detroit'),
+('Green Bay Packers', 'NFL', 'Green Bay'),
+('Houston Texans', 'NFL', 'Houston'),
+('Indianapolis Colts', 'NFL', 'Indianapolis'),
+('Jacksonville Jaguars', 'NFL', 'Jacksonville'),
+('Kansas City Chiefs', 'NFL', 'Kansas City'),
+('Las Vegas Raiders', 'NFL', 'Las Vegas'),
+('Los Angeles Chargers', 'NFL', 'Los Angeles'),
+('Los Angeles Rams', 'NFL', 'Los Angeles'),
+('Miami Dolphins', 'NFL', 'Miami'),
+('Minnesota Vikings', 'NFL', 'Minneapolis'),
+('New England Patriots', 'NFL', 'Boston'),
+('New Orleans Saints', 'NFL', 'New Orleans'),
+('New York Giants', 'NFL', 'New York'),
+('New York Jets', 'NFL', 'New York'),
+('Philadelphia Eagles', 'NFL', 'Philadelphia'),
+('Pittsburgh Steelers', 'NFL', 'Pittsburgh'),
+('San Francisco 49ers', 'NFL', 'San Francisco'),
+('Seattle Seahawks', 'NFL', 'Seattle'),
+('Tampa Bay Buccaneers', 'NFL', 'Tampa'),
+('Tennessee Titans', 'NFL', 'Nashville'),
+('Washington Commanders', 'NFL', 'Washington');
+
+-- MLB Teams (sample - add all 30)
+INSERT INTO teams (name, sport, city) VALUES
+('New York Yankees', 'MLB', 'New York'),
+('Los Angeles Dodgers', 'MLB', 'Los Angeles'),
+('Boston Red Sox', 'MLB', 'Boston'),
+('Chicago Cubs', 'MLB', 'Chicago');
+-- ... add remaining MLB, NBA, NHL teams
+```
 
 ---
 
-## Remaining Questions
+## Key Decisions Made
 
-- [ ] Do you have UI designs, or should we use a component library (e.g., React Native Paper, Tamagui)?
-- [ ] Do you want to migrate existing WordPress content/data?
-- [ ] Any legal concerns about scraping competitors?
-- [ ] What's your target launch timeframe?
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Platform | iOS first | Faster to market, add Android post-launch |
+| Backend | Supabase free tier | Auth + DB + Functions in one, $0 cost |
+| UI Library | React Native Paper | Pre-built components, faster development |
+| Timeline | 45 days | Aggressive but achievable for MVP |
+| MVP Favorites | Teams only | Simpler than players, add players later |
+| WordPress | Skip migration | Start fresh with scraped data |
+| Auth | Email only for MVP | Apple Sign-In adds complexity, add later |
 
 ---
 
