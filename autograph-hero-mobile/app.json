@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "autograph-hero-mobile",
-    "slug": "autograph-hero-mobile",
+    "name": "AutographHero",
+    "slug": "autograph-hero",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,21 +10,34 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1E3A5F"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.autographhero.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "AutographHero uses your location to show signing events near you."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#1E3A5F"
       },
+      "package": "com.autographhero.app",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "autograph-hero"
+      }
+    },
+    "plugins": [
+      "expo-secure-store"
+    ]
   }
 }

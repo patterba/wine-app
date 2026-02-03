@@ -1,8 +1,8 @@
 import React from 'react';
+import { Text, View, ActivityIndicator, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTheme } from 'react-native-paper';
 import { useAuth } from '../hooks/useAuth';
 import {
   LoginScreen,
@@ -35,9 +35,22 @@ function AuthNavigator() {
   );
 }
 
-function MainTabNavigator() {
-  const theme = useTheme();
+// Simple icon component using emoji (can replace with vector icons later)
+function TabIcon({ name, color, size }: { name: string; color: string; size: number }) {
+  const icons: Record<string, string> = {
+    calendar: '📅',
+    star: '⭐',
+    account: '👤',
+  };
 
+  return (
+    <Text style={{ fontSize: size - 4 }}>
+      {icons[name] || '•'}
+    </Text>
+  );
+}
+
+function MainTabNavigator() {
   return (
     <MainTab.Navigator
       screenOptions={{
@@ -90,18 +103,12 @@ function MainTabNavigator() {
   );
 }
 
-// Simple icon component using text (we can replace with vector icons later)
-function TabIcon({ name, color, size }: { name: string; color: string; size: number }) {
-  const icons: Record<string, string> = {
-    calendar: '📅',
-    star: '⭐',
-    account: '👤',
-  };
-
+function LoadingScreen() {
   return (
-    <span style={{ fontSize: size - 4 }}>
-      {icons[name] || '•'}
-    </span>
+    <View style={styles.loadingContainer}>
+      <ActivityIndicator size="large" color="#1E3A5F" />
+      <Text style={styles.loadingText}>Loading...</Text>
+    </View>
   );
 }
 
@@ -109,7 +116,7 @@ export default function AppNavigator() {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return null; // Or a loading screen
+    return <LoadingScreen />;
   }
 
   return (
@@ -152,3 +159,17 @@ export default function AppNavigator() {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FAFAFA',
+  },
+  loadingText: {
+    marginTop: 12,
+    color: '#666',
+    fontSize: 16,
+  },
+});
