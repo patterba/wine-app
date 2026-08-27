@@ -36,8 +36,6 @@
         "projectId": "autograph-hero"
       }
     },
-    "plugins": [
-      "expo-secure-store"
-    ]
+    
   }
 }
